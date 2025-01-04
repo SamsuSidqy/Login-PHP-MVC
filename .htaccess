@@ -1,0 +1,19 @@
+Options -Indexes
+
+RewriteEngine On
+RewriteRule ^controller/ - [F,L]
+RewriteRule ^model/ - [F,L]
+RewriteRule ^vendor/ - [F,L]
+RewriteRule ^view/ - [F,L]
+RewriteRule ^.env$ - [F,L]
+
+
+ErrorDocument 404 /login/index.php?error=404
+ErrorDocument 403 /login/index.php?error=403
+ErrorDocument 500 /login/index.php?error=500
+
+
+
+
+
+
