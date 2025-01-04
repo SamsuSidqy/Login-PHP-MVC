@@ -6,7 +6,10 @@ RewriteRule ^model/ - [F,L]
 RewriteRule ^vendor/ - [F,L]
 RewriteRule ^view/ - [F,L]
 RewriteRule ^.env$ - [F,L]
-
+RewriteRule ^composer.json$ - [F,L]
+RewriteRule ^.gitignore$ - [F,L]
+RewriteRule ^composer.lock$ - [F,L]
+RewriteRule ^README.md$ - [F,L]
 
 ErrorDocument 404 /login/index.php?error=404
 ErrorDocument 403 /login/index.php?error=403

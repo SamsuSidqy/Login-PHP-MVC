@@ -1,10 +1,12 @@
-<?php  ?>
-
 <?php 
 
+require_once __DIR__ . '/../../controller/user/Login.php';
+
 $valuePost  = extract($_POST);
+$Controllerlogin = new Login();
+
 if ($valuePost) {
-  echo "Method Post";
+  $Controllerlogin::HandleLogin($_POST,'login','auth');
 }
 
 
@@ -49,6 +51,11 @@ if (isset($_GET['page'])) {
 </style>
 
 <body>
+ <!--  <?php foreach($data as $d) { ?>
+    <p><?= $d->username; ?></p>
+  <?php } ?> -->
+
+
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
       <div class="content-wrapper d-flex align-items-center auth px-0">
