@@ -24,15 +24,22 @@ class Login{
 
 	public static function HandleLogin($request,$page,$type){
 		$value = extract($request);
-
+		$user = new User();
 		if ($value) {
-			$username = $request['email'];
+			$email = $request['email'];
 			$password = $request['password'];
 
 			if ($email && $password) {
-				$_SESSION['authentication'] = true;
-				$_SESSION['user'] = 'asep';
-				header('Location:'.$_ENV['ADDRESS']);
+				list($option,$result) = $user->authenticate($email,$password);
+
+				if ($option) {
+					$_SESSION['authentication'] = true;
+					$_SESSION['user'] = $result['username'];
+					$_SESSION['id'] = $result['id'];
+					$_SESSION['expired'] = time();
+					header('Location:'.$_ENV['ADDRESS']);
+				}
+
 			}
 		}
 	}

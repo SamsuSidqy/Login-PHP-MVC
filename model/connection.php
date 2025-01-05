@@ -10,13 +10,20 @@ class Connection{
 		$servername = $_ENV['SERVER_DB'];
 		$username = $_ENV['USERNAME_DB'];
 		$password = $_ENV['PASSWORD_DB'];
-		$DB_NAME = $_ENV['NAME_DB'];
+		$DB_NAME = $_ENV['NAME_DB'];		
 
-		$conn = new mysqli($servername, $username, $password,$DB_NAME);
-		if (!$conn) {
-			echo("Connection failed: " . mysqli_connect_error());
+		try {
+			$conn = new mysqli($servername, $username, $password,$DB_NAME);
+			if (!$conn) {
+				echo("Connection failed: " . mysqli_connect_error());
+			}
+			return $conn;
+		} catch (Exception $e) {
+			extract([
+				'message' => $e
+			]);
+			die(include(__DIR__ . '/../view/errors/500.php'));
 		}
-		return $conn;
 	}
 
 

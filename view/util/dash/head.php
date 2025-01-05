@@ -106,11 +106,11 @@
               <img src="https://themewagon.github.io/skydash/images/faces/face28.jpg" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="<?= $_ENV['ADDRESS'] ?>?page=settings">
                 <i class="ti-settings text-primary"></i>
                 Settings
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="<?= $_ENV['ADDRESS'] ?>logout.php">
                 <i class="ti-power-off text-primary"></i>
                 Logout
               </a>
@@ -129,7 +129,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="<?= $_ENV['ADDRESS'] ?>">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>

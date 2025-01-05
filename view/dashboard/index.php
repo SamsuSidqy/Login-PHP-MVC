@@ -1,4 +1,6 @@
-<?php  ?>
+<?php  
+
+?>
 <?php include 'view/util/dash/head.php'; ?>
 
 
