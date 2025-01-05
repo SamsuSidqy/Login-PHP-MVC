@@ -1,7 +1,6 @@
 
 ## Requirements
 
-Install my-project with npm
 
 `.env`
 
